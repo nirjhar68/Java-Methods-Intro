@@ -1,0 +1,48 @@
+import java.util.*;
+
+public class IntroducingMethods {
+	static Scanner input = new Scanner(System.in);
+
+	public static void main(String[] args) {
+		//Methods are instructions to the computer to do something
+		//The syntax of methods in java is Access modifier Type methodName(zero/one/multiple arguments)
+		//For example, public static main(String[] args). That's the method every java program must have
+		//Let's get the integers from users. A user can enter multiple integers but the program will take only the 1st 2
+		//Because we are assigning the integers to 2 variables
+		
+		System.out.println("Please enter the integers \n");
+		int x = input.nextInt();
+		int y = input.nextInt();
+		
+		//we can either declare a variable and initialize that by calling the addition method
+		//Or we can directly call the addition method inside the println() and pass the arguments
+		//int z = addition(x, y);
+		//System.out.println(z);
+		
+		System.out.println(addition(x, y));
+		
+		//Now , let's try to send the arguments to a method that belongs to another class. I created another class called IntroMetho
+		//IntroMetho has a method that multiplies the values 
+		//Returns the values to s
+		
+		int s = IntroMetho.multiplyArgs(x, y);
+		System.out.println(s);
+		
+		// Let's try and execute a method inside the println()
+		//Again I am going to call a method from the IntroMetho class
+		
+		String someText = "Hello worold! I am Nuhel. ";
+		IntroMetho.printString(someText);
+		
+        // Now I have created another method called printString of void type but there are three arguments
+		//We can have the same name for different methods. The main things that matter are the type, number and position of the arguments
+		
+		IntroMetho.printString(IntroMetho.multiplyArgs(x, y), addition(x, y), someText);
+
+	}
+	
+	private static int addition(int a, int b) {
+		return (a + b);
+	}
+
+}
