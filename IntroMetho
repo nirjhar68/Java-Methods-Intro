@@ -1,0 +1,17 @@
+
+public class IntroMetho {
+	
+
+	public static int multiplyArgs(int x, int y) {
+		return (x * y);
+	}
+	
+	public static void printString(String args) {
+		System.out.println(args);
+	}
+	
+	public static void printString(int c, int d, String k) {
+		System.out.println(c + " " + d + " "+ k);
+	}
+
+}
